@@ -10,6 +10,7 @@ import EvenOrodd from './EvenOrodd.jsx'
 import CapitalizeWords from './CapitalizeWords.jsx'
 import RecipeFilterApp from './RecipeFilterApp.jsx'
 import TabSwitcher from './TabSwitcher.jsx'
+import ProgressBar from './ProgressBar.jsx'
 function App() {
 //   const [test3Data, setTest3Data] = useState('')
 
@@ -57,8 +58,9 @@ function App() {
         {/* <Accordion/> */}
         {/* <Duplicates/> */}
         {/* <CapitalizeWords/>   */}
-        <RecipeFilterApp/>
+        {/* <RecipeFilterApp/> */}
         {/* <TabSwitcher/> */}
+        <ProgressBar/>
        
       </div>
     </>

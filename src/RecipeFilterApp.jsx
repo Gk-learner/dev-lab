@@ -26,7 +26,7 @@ const RecipeFilterApp = () => {
         console.log("avg", sum, length ,(sum / leng).toFixed(2));
         setLength(leng);
         };
-        const handleClick = (e) => {
+        const handleClick = () => {
             setCartItem(prev => prev+1);
         }
 
