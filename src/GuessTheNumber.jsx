@@ -4,28 +4,26 @@ function GuessTheNumber() {
   const [num, setNum] = useState('')
   const [result, setResult] = useState('')
   const [count, setCount] = useState(1)
+    const [numberToGuess, setNumberToGuess] = useState(() => Math.floor(Math.random() * 100) + 1);
   const handleGuess = () => {
-    const number = Math.round(Math.random() * 100  );
-    // const number = 42; 
     setCount((prevCount) => prevCount + 1);
-    if(number == num){
-    setResult(`Congratulations! You guessed the number in ${count} attempts.`)
-}
-else if(num < number){
-    setResult(`Too low! Try again.`)
-}
-else if(num > number && num < 100){
-    setResult(`Too high! Try again.`)
-}
-else if(num >= 100){
-    setResult("Please enter a number between 1 and 100.");
-}
-else{
-    setResult("Please enter a number between 1 and 100.")
-  };
+   
+    if (num > 100 || num <0 || isNaN(num)) {
+      setResult("Please enter a number between 1 and 100.");
+    }
+    else if (numberToGuess == num) {
+      setResult(`Congratulations! You guessed the number in ${count} attempts.`)
+    }
+    else if (num < numberToGuess) {
+      setResult(`Too low! Try again.`)
+    }
+    else if (num > numberToGuess && num < 100) {
+      setResult(`Too high! Try again.`)
+    }
   }
-//   Function to reset the game
+  //   Function to reset the game
   const resetGame = () => {
+    setNumberToGuess(Math.floor(Math.random() * 100) + 1)
     setNum('');
     setResult('');
   };
@@ -40,13 +38,13 @@ else{
         value={num}
         onChange={(e) => setNum(e.target.value)}
       />
-      <div style={{display: "flex", flexDirection: "row", marginTop: "10px",gap: "10px"}}> 
-         <button onClick={() => handleGuess()}>
-        Check Guess</button>
-      <button onClick={() => resetGame()}>Reset Game</button>
+      <div style={{ display: "flex", flexDirection: "row", marginTop: "10px", gap: "10px" }}>
+        <button onClick={() => handleGuess()}>
+          Check Guess</button>
+        <button onClick={() => resetGame()}>Reset Game</button>
       </div>
-     
-{result}
+
+      {result}
     </div>
   );
 }
