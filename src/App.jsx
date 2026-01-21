@@ -94,7 +94,7 @@
 
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
+import Profile from './Profile.jsx'
 import Accordion from './Accordion.jsx'
 import Navbar from './Navbar.jsx'
 import ProgressBar from './ProgressBar.jsx'
@@ -109,6 +109,7 @@ function App() {
         <Route path="/" element={<GuessTheNumber />} />
         <Route path="/progress" element={<ProgressBar />} />
         <Route path="/accordion" element={<Accordion />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   )

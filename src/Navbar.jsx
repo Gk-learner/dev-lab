@@ -8,6 +8,7 @@ function Navbar() {
       <NavLink to="/">Guess The Number</NavLink>
       <NavLink to="/progress">Progress Bar</NavLink>
       <NavLink to="/accordion">Accordion</NavLink>
+      <NavLink to ="/profile">Profile</NavLink>
     </nav>
   )
 }
