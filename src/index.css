@@ -78,7 +78,6 @@ body {
   align-items: center;
 }
 
-/* Container */
 .even-odd-container {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(12px);

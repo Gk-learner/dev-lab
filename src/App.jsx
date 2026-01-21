@@ -99,6 +99,7 @@ import Accordion from './Accordion.jsx'
 import Navbar from './Navbar.jsx'
 import ProgressBar from './ProgressBar.jsx'
 import GuessTheNumber from './GuessTheNumber.jsx'
+import ModeToggle from './ModeToggle.jsx'
 
 function App() {
   return (
@@ -110,6 +111,7 @@ function App() {
         <Route path="/progress" element={<ProgressBar />} />
         <Route path="/accordion" element={<Accordion />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/mode-toggle" element={<ModeToggle />} />
       </Routes>
     </Router>
   )

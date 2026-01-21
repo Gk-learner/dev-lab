@@ -9,6 +9,7 @@ function Navbar() {
       <NavLink to="/progress">Progress Bar</NavLink>
       <NavLink to="/accordion">Accordion</NavLink>
       <NavLink to ="/profile">Profile</NavLink>
+      <NavLink to ="/mode-toggle">Mode Toggle</NavLink>
     </nav>
   )
 }
