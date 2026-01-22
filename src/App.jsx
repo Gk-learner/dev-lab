@@ -95,6 +95,7 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Profile from './Profile.jsx'
+import ZigzagString from './ZigzagString.jsx'
 import Accordion from './Accordion.jsx'
 import Navbar from './Navbar.jsx'
 import ProgressBar from './ProgressBar.jsx'
@@ -112,6 +113,7 @@ function App() {
         <Route path="/accordion" element={<Accordion />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/mode-toggle" element={<ModeToggle />} />
+        <Route path="/zigzag-string" element={<ZigzagString />} />
       </Routes>
     </Router>
   )
