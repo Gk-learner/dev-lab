@@ -101,11 +101,12 @@ import Navbar from './Navbar.jsx'
 import ProgressBar from './ProgressBar.jsx'
 import GuessTheNumber from './GuessTheNumber.jsx'
 import ModeToggle from './ModeToggle.jsx'
+import ScrollToTop from './ScrollToTop.jsx'
 
 function App() {
   return (
     
-    <Router>
+    <><Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<GuessTheNumber />} />
@@ -115,7 +116,7 @@ function App() {
         <Route path="/mode-toggle" element={<ModeToggle />} />
         <Route path="/zigzag-string" element={<ZigzagString />} />
       </Routes>
-    </Router>
+    </Router><ScrollToTop /></>
   )
 }
 
