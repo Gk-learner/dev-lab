@@ -116,7 +116,9 @@ function App() {
         <Route path="/mode-toggle" element={<ModeToggle />} />
         <Route path="/zigzag-string" element={<ZigzagString />} />
       </Routes>
-    </Router><ScrollToTop /></>
+    </Router>
+    {/* <ScrollToTop /> */}
+    </>
   )
 }
 
