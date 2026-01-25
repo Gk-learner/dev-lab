@@ -102,6 +102,7 @@ import ProgressBar from './ProgressBar.jsx'
 import GuessTheNumber from './GuessTheNumber.jsx'
 import ModeToggle from './ModeToggle.jsx'
 import ScrollToTop from './ScrollToTop.jsx'
+import LeapYear from './LeapYear.jsx'
 
 function App() {
   return (
@@ -117,7 +118,7 @@ function App() {
         <Route path="/zigzag-string" element={<ZigzagString />} />
       </Routes>
     </Router>
-    {/* <ScrollToTop /> */}
+    <LeapYear />
     </>
   )
 }

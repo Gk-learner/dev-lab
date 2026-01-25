@@ -22,4 +22,18 @@ const RemoveDuplicates = (arr) => {
     return result;
 }
 
-export { RemoveDuplicates, generateAtoZ };
+const flattenArray = (arr) => {
+    return arr.reduce((acc, curr) => {
+        Array.isArray(curr) ? acc.concat(flattenArray(curr)) : acc.concat(curr)
+    }, [])
+}
+
+const formLargestNumber = (arr) => {
+    const result = arr.map(String)
+    .sort((a,b)=>(b+a)-(a+b))
+    .join("")
+
+    return result[0]==="0" ? "0" : result   ;
+}
+
+export { RemoveDuplicates, generateAtoZ, flattenArray, formLargestNumber };
