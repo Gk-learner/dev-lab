@@ -98,6 +98,7 @@ import Profile from './Profile.jsx'
 import ZigzagString from './ZigzagString.jsx'
 import Accordion from './Accordion.jsx'
 import Navbar from './Navbar.jsx'
+import Todo from './ToDo.jsx'
 import ProgressBar from './ProgressBar.jsx'
 import GuessTheNumber from './GuessTheNumber.jsx'
 import ModeToggle from './ModeToggle.jsx'
@@ -118,7 +119,8 @@ function App() {
         <Route path="/zigzag-string" element={<ZigzagString />} />
       </Routes>
     </Router>
-    <LeapYear />
+    {/* <LeapYear /> */}
+    <Todo/>
     </>
   )
 }
