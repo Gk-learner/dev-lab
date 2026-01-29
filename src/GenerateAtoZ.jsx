@@ -48,4 +48,29 @@ function generateFibonacci(n) {
 }
 generateFibonacci(5)
 
+//creating a simple counter that returns a count object with methiods to increment decrement and reset with
+//  chaining and taking care of shadowing concept
+
+function makeCounter(initialValue = 0) {
+    let count = initialValue;
+    return {
+         increment: function() {
+            count++;
+            return count
+        },
+    decrement: function () {
+        count--;
+        return count;
+        },
+        reset: function () {
+            count = initialValue;
+            return count;
+    }
+}
+}
+const counter = makeCounter(9)
+console.log(counter.increment())
+console.log(counter.decrement())
+console.log(counter.reset())
+
 export { RemoveDuplicates, generateAtoZ, flattenArray, formLargestNumber };
