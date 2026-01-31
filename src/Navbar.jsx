@@ -11,6 +11,7 @@ function Navbar() {
       <NavLink to="/profile">Profile</NavLink>
       <NavLink to="/mode-toggle">Mode Toggle</NavLink>
       <NavLink to="/zigzag-string">Zigzag String</NavLink>
+      <NavLink to="/kanban-board">Kanban Board</NavLink>
     </nav>
   )
 }

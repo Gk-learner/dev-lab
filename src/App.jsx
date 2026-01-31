@@ -104,6 +104,7 @@ import GuessTheNumber from './GuessTheNumber.jsx'
 import ModeToggle from './ModeToggle.jsx'
 import ScrollToTop from './ScrollToTop.jsx'
 import LeapYear from './LeapYear.jsx'
+import KanbanBoard from './KanbanBoard.jsx'
 
 function App() {
   return (
@@ -117,6 +118,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/mode-toggle" element={<ModeToggle />} />
         <Route path="/zigzag-string" element={<ZigzagString />} />
+        <Route path="/kanban-board" element={<KanbanBoard />} />
       </Routes>
     </Router>
     {/* <LeapYear /> */}
