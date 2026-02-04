@@ -2,17 +2,15 @@ import React, { useState, useEffect } from "react";
 import "./styles.css";
 
 export default function BillingCounter() {
-  const [counter, setCounter] = useState('')
-  // const 
-  const handleCounter = (e) => {
+  const [counter, setCounter] = useState(0)
+  const [showCounter, setShowCounter] = useState(false);
+  const handleCounter = () => {
+    setShowCounter(true)
   }
-  const handleCreateCounter = (e) => {
-    setCounter(e.target.value)
 
-  }
   useEffect(() => {
     console.log(counter)
-  },[counter])
+  }, [counter])
   return (
     <>
       <div className="billing-container" data-testid="billing-container">
@@ -22,7 +20,7 @@ export default function BillingCounter() {
             data-testid="counter-input"
             type="number"
             placeholder="Number of counters"
-            onChange={(e) => handleCreateCounter(e)}
+            onChange={(e) => setCounter(Number(e.target.value))}
           />
           <button
             onClick={() => handleCounter()} data-testid="set-counter-button">
@@ -30,10 +28,10 @@ export default function BillingCounter() {
           </button>
 
         </div>
-        {[...Array(counter)].map((_, index) => {
+        {showCounter && [...Array(counter)].map((_, index) => (
           <div key={index}
-            style={{ border: "2px solid grey", padding: "2px", width: "40px", height: "40px" }}>hello</div>
-        })}
+            style={{ border: "1px solid lightGrey", padding: "10px", width: "40px", height: "40px" }}>{index}</div>
+        ))}
       </div >
     </>
 
