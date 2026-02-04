@@ -91,25 +91,26 @@
 // // console.log(res);
 
 
-
+import React,{Suspense} from 'react'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Profile from './Profile.jsx'
-import ZigzagString from './ZigzagString.jsx'
-import Accordion from './Accordion.jsx'
 import Navbar from './Navbar.jsx'
 import Todo from './ToDo.jsx'
-import ProgressBar from './ProgressBar.jsx'
-import GuessTheNumber from './GuessTheNumber.jsx'
-import ModeToggle from './ModeToggle.jsx'
 import ScrollToTop from './ScrollToTop.jsx'
 import LeapYear from './LeapYear.jsx'
-import KanbanBoard from './KanbanBoard.jsx'
-
+const KanbanBoard = React.lazy(() => import('./KanbanBoard.jsx'))
+const ToastContainer = React.lazy(() => import('./Toast/ToastContainer.jsx'))
+const GuessTheNumber = React.lazy(() => import('./GuessTheNumber.jsx'))
+const ProgressBar = React.lazy(() => import('./ProgressBar.jsx'))
+const Profile = React.lazy(() => import('./Profile.jsx'))
+const ZigzagString = React.lazy(() => import('./ZigzagString.jsx'))
+const ModeToggle = React.lazy(() => import('./ModeToggle.jsx'))
+const Accordion = React.lazy(() => import('./Accordion.jsx'))
 function App() {
   return (
     
     <><Router>
+      <Suspense fallback={<div>Loading...</div>}>
       <Navbar />
       <Routes>
         <Route path="/" element={<GuessTheNumber />} />
@@ -119,8 +120,11 @@ function App() {
         <Route path="/mode-toggle" element={<ModeToggle />} />
         <Route path="/zigzag-string" element={<ZigzagString />} />
         <Route path="/kanban-board" element={<KanbanBoard />} />
+        <Route path="/toast" element={<ToastContainer/ >}/>
       </Routes>
+      </Suspense>
     </Router>
+
     {/* <LeapYear /> */}
     {/* <Todo/> */}
     </>
