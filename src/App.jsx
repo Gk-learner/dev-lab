@@ -108,6 +108,7 @@ const ModeToggle = React.lazy(() => import('./ModeToggle.jsx'))
 const Accordion = React.lazy(() => import('./Accordion.jsx'))
 const BillingCounter = React.lazy(() => import('./BillingCouter.jsx'))
 const MultiSelectDropdown = React.lazy(() => import('./MultiseectDropdown.jsx'))
+const StarRating = React.lazy(() => import('./StarRating.jsx'))
 function App() {
   return (
     
@@ -126,7 +127,8 @@ function App() {
         <Route path="/toast" element={<ToastContainer/ >}/>
         <Route path="/billing-counter" element={<BillingCounter/>}/>
         <Route path="/multiselect-dropdown" element={<MultiSelectDropdown/>}/>
-      </Routes>
+        <Route path="/star-rating" element={<StarRating/>}/>
+           </Routes>
       </Suspense>
     </Router>
 
