@@ -106,6 +106,7 @@ const Profile = React.lazy(() => import('./Profile.jsx'))
 const ZigzagString = React.lazy(() => import('./ZigzagString.jsx'))
 const ModeToggle = React.lazy(() => import('./ModeToggle.jsx'))
 const Accordion = React.lazy(() => import('./Accordion.jsx'))
+const BillingCounter = React.lazy(() => import('./BillingCouter.jsx'))
 function App() {
   return (
     
@@ -121,6 +122,7 @@ function App() {
         <Route path="/zigzag-string" element={<ZigzagString />} />
         <Route path="/kanban-board" element={<KanbanBoard />} />
         <Route path="/toast" element={<ToastContainer/ >}/>
+        <Route path="/billing-counter" element={<BillingCounter/>}/>
       </Routes>
       </Suspense>
     </Router>

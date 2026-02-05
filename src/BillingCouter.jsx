@@ -1,16 +1,26 @@
 import React, { useState, useEffect } from "react";
-import "./styles.css";
+// import "./styles.css";
 
 export default function BillingCounter() {
-  const [counter, setCounter] = useState(0)
-  const [showCounter, setShowCounter] = useState(false);
+  const [counter, setCounter] = useState([])
+  const [buttonText, setButtonText] = useState('Set Counters')
+  const [addCounter, setAddCounter] = useState()
+  const [customer,setCustomer] = useState('')
+  const [item, setItem] = useState([])
+  const [array, setArrays] = useState([])
+
   const handleCounter = () => {
-    setShowCounter(true)
+    setAddCounter(counter)
+    setButtonText("Add Customer")
+  }
+  const addCustomer = () => {
+    console.log("Adding customer", addCounter, customer);
+    setItem([...item, customer])
+    console.log(Array.from({ length: counter }, () => []))
+ const arr = Array.from({ length: counter }, () => [])
+   setArrays(arr)
   }
 
-  useEffect(() => {
-    console.log(counter)
-  }, [counter])
   return (
     <>
       <div className="billing-container" data-testid="billing-container">
@@ -18,21 +28,51 @@ export default function BillingCounter() {
         <div className="input-section" data-testid="counter-input-section">
           <input
             data-testid="counter-input"
+            // value={counter}
             type="number"
-            placeholder="Number of counters"
-            onChange={(e) => setCounter(Number(e.target.value))}
+            placeholder={`${!addCounter ? "Number of counters" : "Enter Quantity"}`}
+            onChange={(e) =>
+              !addCounter
+                ? setCounter(Number(e.target.value))
+                : setCustomer(Number(e.target.value))}
           />
           <button
-            onClick={() => handleCounter()} data-testid="set-counter-button">
-            Set Counters
+            onClick={() => !addCounter ? handleCounter() : addCustomer()} data-testid="set-counter-button">
+            {buttonText}
           </button>
-
         </div>
-        {showCounter && [...Array(counter)].map((_, index) => (
-          <div key={index}
-            style={{ border: "1px solid lightGrey", padding: "10px", width: "40px", height: "40px" }}>{index}</div>
-        ))}
-      </div >
+        <div style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
+         {addCounter &&
+  Array.from({ length: addCounter }).map((_, index) => (
+    <div
+      key={index}
+      style={{
+        border: "1px solid lightGrey",
+        padding: "10px",
+        height: "fit-content",
+        fontWeight: "bold"
+      }}
+    >
+      Counter {index + 1}
+
+      <div
+        style={{
+          marginTop: "10px",
+          border: "1px solid grey",
+          width: "30%",
+          margin: "5px auto"
+        }}
+      >
+        {item.map((itm, idx) =>
+          idx % addCounter === index ? (
+            <div key={idx}>{itm}</div>
+          ) : null
+        )}
+      </div>
+    </div>
+  ))}
+</div>
+      </div>
     </>
 
   );
