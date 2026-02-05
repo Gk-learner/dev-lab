@@ -6,7 +6,7 @@ const Toast = ({message, type,duration}) => {
 
   useEffect(() => {
     if (!toastData.message) return;
-        setHide(false);
+        // setHide(false);
 
     const timer = setTimeout(() => {
       setHide(true);

@@ -14,6 +14,7 @@ function Navbar() {
       <NavLink to="/kanban-board">Kanban Board</NavLink>
       <NavLink to="/toast">Toast</NavLink>
       <NavLink to="/billing-counter">Billing Counter</NavLink>
+      <NavLink to="/multiselect-dropdown">Multiselect Dropdown</NavLink>
     </nav>
   )
 }

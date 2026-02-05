@@ -107,6 +107,7 @@ const ZigzagString = React.lazy(() => import('./ZigzagString.jsx'))
 const ModeToggle = React.lazy(() => import('./ModeToggle.jsx'))
 const Accordion = React.lazy(() => import('./Accordion.jsx'))
 const BillingCounter = React.lazy(() => import('./BillingCouter.jsx'))
+const MultiSelectDropdown = React.lazy(() => import('./MultiseectDropdown.jsx'))
 function App() {
   return (
     
@@ -114,6 +115,7 @@ function App() {
       <Suspense fallback={<div>Loading...</div>}>
       <Navbar />
       <Routes>
+
         <Route path="/" element={<GuessTheNumber />} />
         <Route path="/progress" element={<ProgressBar />} />
         <Route path="/accordion" element={<Accordion />} />
@@ -123,6 +125,7 @@ function App() {
         <Route path="/kanban-board" element={<KanbanBoard />} />
         <Route path="/toast" element={<ToastContainer/ >}/>
         <Route path="/billing-counter" element={<BillingCounter/>}/>
+        <Route path="/multiselect-dropdown" element={<MultiSelectDropdown/>}/>
       </Routes>
       </Suspense>
     </Router>
