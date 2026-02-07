@@ -10,4 +10,10 @@ export default defineConfig({
       },
     }),
   ],
+   test: {
+    globals: true,         // use global test functions like `test`, `expect`
+    environment: 'jsdom',  // simulate browser environment
+    setupFiles: './src/setupTests.js' // optional for jest-dom
+  },
+  
 })
